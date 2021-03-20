@@ -1,0 +1,43 @@
+.background {
+  margin: 0rpx;
+  padding: 0rpx;
+  width: 750rpx;
+}
+
+.userName {
+  position: absolute;
+  top: 256rpx;
+  left: 360rpx;
+  font-size: 42rpx;
+}
+
+.userAvatar {
+  position: absolute;
+  top: 72rpx;
+  left: 296rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #619bcd;
+}
+
+.share-wechat{
+  background-size: 110rpx 110rpx;
+  position: absolute;
+  bottom: 60rpx;
+  left: 164rpx;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+
+.create-image {
+  background-size: 110rpx 110rpx;
+  position: absolute;
+  bottom: 60rpx;
+  right: 164rpx;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}

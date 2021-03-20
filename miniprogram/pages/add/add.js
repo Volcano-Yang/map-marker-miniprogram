@@ -75,7 +75,7 @@ Page({
           icon: "success",
           success: (res) => {
             wx.navigateTo({
-              url: "../map/map",
+              url: "../share/share",
             });
           },
         });

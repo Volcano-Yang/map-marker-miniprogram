@@ -45,8 +45,8 @@
           "scene": null
         },
         {
-          "name": "海报页",
-          "pathName": "pages/poster/poster",
+          "name": "分享页",
+          "pathName": "pages/share/share",
           "query": "",
           "scene": null
         },

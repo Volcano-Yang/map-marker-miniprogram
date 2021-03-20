@@ -20,7 +20,7 @@
         <cover-view style="font-size:10px;">设计</cover-view>
       </cover-view>
     </cover-view>
-    <cover-view class="numberList-item" bindtap="addOccurpy">
+    <cover-view class="numberList-item">
       <cover-image class="numberList-item-image" src="/images/home/occupy.png"></cover-image>
       <cover-view class="numberList-item-text">
         {{occurpyProblemNumber}}

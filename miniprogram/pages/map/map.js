@@ -67,11 +67,11 @@ Page({
       let errorProblemNumber = 0;
       let designProblemNumber = 0;
       res.data.forEach((item) => {
-        if (item.label === "盲道破损") {
+        if (item.problemLabel === "盲道破损") {
           errorProblemNumber++;
-        } else if (item.label === "盲道占用") {
+        } else if (item.problemLabel === "盲道占用") {
           occurpyProblemNumber++;
-        } else if (item.label === "盲道设计") {
+        } else if (item.problemLabel === "盲道设计") {
           designProblemNumber++;
         }
       });
@@ -91,9 +91,6 @@ Page({
         item.width = 20;
         item.height = 25;
         item.title = item.problemLabel;
-        // const label = item.label;
-        // item.label = { content: label, color: "#24292e", fontSize: 12 };
-        // item.label = { content: "", color: "#24292e", fontSize: 12 };
       });
       this.setData(
         {
@@ -103,30 +100,6 @@ Page({
           wx.hideLoading();
         }
       );
-    });
-  },
-
-  viewAll: function () {
-    wx.navigateTo({
-      url: "../list/list",
-    });
-  },
-
-  viewMyList: function () {
-    wx.navigateTo({
-      url: "../myList/myList",
-    });
-  },
-
-  addMarker: function () {
-    wx.navigateTo({
-      url: "../add/add",
-    });
-  },
-
-  goArticle: function () {
-    wx.navigateTo({
-      url: "../article/article",
     });
   },
 
@@ -202,28 +175,6 @@ Page({
       },
     });
   },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title:
-        "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
-      path: "/pages/map/map",
-      imageUrl: "/images/share.jpg",
-    };
-  },
-  /**
-   * 用户分享到朋友圈
-   */
-  onShareTimeline: function () {
-    return {
-      title:
-        "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
-      path: "/pages/map/map",
-      imageUrl: "/images/share.jpg",
-    };
-  },
 
   onMarkerTap: function (event) {
     wx.navigateTo({
@@ -248,11 +199,6 @@ Page({
         // })
       });
   },
-  addOccurpy: function () {
-    this.setData({
-      occurpyProblemNumber: this.data.occurpyProblemNumber + 1,
-    });
-  },
   hideMe: function (res) {
     this.setData({
       hideMe: true,
@@ -272,9 +218,57 @@ Page({
       url: "../search/search",
     });
   },
-
   onCloseIntroduction() {
     console.log("关闭新手引导");
     this.setData({ isShowIntroduction: false });
+  },
+  /**
+   * 一些页面跳转
+   */
+  viewAll: function () {
+    wx.navigateTo({
+      url: "../list/list",
+    });
+  },
+
+  viewMyList: function () {
+    wx.navigateTo({
+      url: "../myList/myList",
+    });
+  },
+
+  addMarker: function () {
+    wx.navigateTo({
+      url: "../add/add",
+    });
+  },
+
+  goArticle: function () {
+    wx.navigateTo({
+      url: "../article/article",
+    });
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
+      path: "/pages/map/map",
+      imageUrl:
+        "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page.png?sign=223a2ca14ca43b18e594062abb8c45fd&t=1616241279",
+    };
+  },
+  /**
+   * 用户分享到朋友圈
+   */
+  onShareTimeline: function () {
+    return {
+      title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
+      path: "/pages/map/map",
+      imageUrl:
+        "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page.png?sign=223a2ca14ca43b18e594062abb8c45fd&t=1616241279",
+    };
   },
 });
