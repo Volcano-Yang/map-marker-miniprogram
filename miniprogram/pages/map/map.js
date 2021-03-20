@@ -187,15 +187,11 @@ Page({
         name: "getUserOpenId",
       })
       .then((res) => {
-        console.log("openID已复制", res);
-        // wx.setClipboardData({
-        //   data: res.result.openid,
-        //   success: res => {
-        //     wx.showToast({
-        //       title: 'openID已复制',
-        //     })
-        //   }
-        // })
+        try {
+          wx.setStorageSync("openId", res);
+        } catch (e) {
+          console.log("openID储存成功", res);
+        }
       });
   },
   hideMe: function (res) {
