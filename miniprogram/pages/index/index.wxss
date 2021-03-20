@@ -1,0 +1,18 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #454545;
+}
+
+
+/* page {
+  background-color: #454545;
+} */
+
+.introduction-image {
+  width: 750rpx;
+}

@@ -61,6 +61,12 @@
           "pathName": "pages/article/article",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "地图页",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
         }
       ]
     }

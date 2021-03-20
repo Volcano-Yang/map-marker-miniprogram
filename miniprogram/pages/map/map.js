@@ -20,7 +20,6 @@ Page({
     showAdmin: false,
     windowHeight: app.globalData.windowHeight,
     defaultScale: config.default_scale,
-    isShowIntroduction: true,
   },
 
   /**
@@ -217,10 +216,6 @@ Page({
     wx.navigateTo({
       url: "../search/search",
     });
-  },
-  onCloseIntroduction() {
-    console.log("关闭新手引导");
-    this.setData({ isShowIntroduction: false });
   },
   /**
    * 一些页面跳转
