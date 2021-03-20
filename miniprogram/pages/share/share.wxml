@@ -1,13 +1,25 @@
-<image class="background" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page.png?sign=86930bfb97a635b19979b2db3f3e0299&t=1616229791" mode="widthFix"></image>
 <view class="userAvatar">
     <open-data type="userAvatarUrl"></open-data>
 </view>
-<open-data type="userNickName" class="userName" lang="zh_CN"></open-data>
-
+<!-- 昵称、文案、图画介绍 -->
+<view class="content">
+    <open-data type="userNickName" class="userName" lang="zh_CN"></open-data>
+    <view class="user-content">
+        已成为第
+        <text style="color:#0087e5;">{{1}}</text>
+        位上传盲道问题的筑路者，并获得视障人士分享的视界
+        <image class="art" src="../../images/share/art.png" mode="aspectFill"></image>
+        <view>《看与被看》</view>
+        <view>
+            摄影师：傅高山 |
+            <text style="color:#0087e5;">低视力</text>
+        </view>
+    </view>
+</view>
 <!-- 分享朋友圈按钮 -->
-<button class="share-wechat" open-type="share" bindtap="onShareAppMessage" plain="true" style="background-image:url(../../../../images/share/wechat.png);border: none;"></button>
+<button class="share-wechat" open-type="share" bindtap="onShareAppMessage" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/wechat.png?sign=706bf35e4ec8dbba99a60df95beccf47&t=1616242389);border: none;"></button>
 <!-- 生成图片按钮 -->
-<button class="create-image" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true" style="background-image:url(../../../../images/share/png.png); border: none;" wx:if="{{!nickName}}"></button>
-<button class="create-image" bindtap="createShareImage" plain="true" style="background-image:url(../../../../images/share/png.png);border: none;" wx:else></button>
+<button class="create-image" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/png.png?sign=41f6bb27d8704f4cb0f51b5aa1b2bb1f&t=1616242419); border: none;" wx:if="{{!nickName}}"></button>
+<button class="create-image" bindtap="createShareImage" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/png.png?sign=41f6bb27d8704f4cb0f51b5aa1b2bb1f&t=1616242419);border: none;" wx:else></button>
 <!-- 图片生成之后的预览弹窗 -->
 <share-box isCanDraw="{{isCanDraw}}" bind:initData="createShareImage" />

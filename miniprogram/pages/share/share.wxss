@@ -1,14 +1,9 @@
-.background {
-  margin: 0rpx;
-  padding: 0rpx;
+page {
   width: 750rpx;
-}
-
-.userName {
-  position: absolute;
-  top: 256rpx;
-  left: 360rpx;
-  font-size: 42rpx;
+  background-color: #69aff1;
+  background-image: url("https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page.png?sign=fa7bffaf0077ea3d85c5db6556debf89&t=1616242257");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .userAvatar {
@@ -22,10 +17,45 @@
   border: 1px solid #619bcd;
 }
 
-.share-wechat{
+.content {
+  width: 500rpx;
+  height: 650rpx;
+  position: absolute;
+  position: absolute;
+  left: 50%;
+  top: 240rpx;
+  /* 宽度的一半 */
+  margin-left: -250rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userName {
+  font-size: 42rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-content {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.art {
+  width: 400rpx;
+  height: 300rpx;
+  border: 14rpx #fff solid;
+  box-shadow:0px 1px 5px #9C9C9C;
+  margin: 20rpx;
+}
+
+.share-wechat {
   background-size: 110rpx 110rpx;
   position: absolute;
-  bottom: 60rpx;
+  top: 1000rpx;
   left: 164rpx;
   width: 110rpx;
   height: 110rpx;
@@ -35,7 +65,7 @@
 .create-image {
   background-size: 110rpx 110rpx;
   position: absolute;
-  bottom: 60rpx;
+  top: 1000rpx;
   right: 164rpx;
   width: 110rpx;
   height: 110rpx;
