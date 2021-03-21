@@ -59,6 +59,7 @@ Page({
     store
       .add({
         data: {
+          createTime: new Date(),
           address: this.data.address,
           longitude: this.data.longitude,
           latitude: this.data.latitude,

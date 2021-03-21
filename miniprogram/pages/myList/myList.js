@@ -21,12 +21,20 @@ Page({
       })
       .get()
       .then((res) => {
-        console.log(res);
+        const store = res.data.map((item, index) => {
+          if (item.createTime) {
+            item.date = `${item.createTime.getFullYear()}年${
+              item.createTime.getMonth() + 1
+            }月${item.createTime.getDate()}日`;
+          }
+          item.id = index;
+          return item;
+        });
         console.log(res.data);
         // 处理数据日期 和 添加id
         this.setData(
           {
-            store: res.data,
+            store,
           },
           (res) => {
             console.log("设置数据成功");

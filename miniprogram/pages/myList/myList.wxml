@@ -11,10 +11,10 @@
     <view>快去上传吧~</view>
 </view>
 <view class="myList" wx:else>
-    <view class="item" wx:for="{{store}}">
+    <view class="item" wx:for="{{store}}" wx:key="id">
         <view class="item-top">
             <view class="item-icon"></view>
-            <view class="item-title">{{item.createTime || "没有记录时间"}}</view>
+            <view class="item-title">{{item.date || "没有记录时间"}}</view>
         </view>
         <view class="item-bottom">
             <view class="item-address">
