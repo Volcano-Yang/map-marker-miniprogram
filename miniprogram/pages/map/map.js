@@ -85,8 +85,8 @@ Page({
        * 处理marker
        * 将 _id 给 id ,确保 marker 事件的正确触发
        */
-      data.map((item) => {
-        item.id = item._id;
+      data.map((item, index) => {
+        item.id = index;
         item.width = 20;
         item.height = 25;
         item.title = item.problemLabel;
@@ -174,13 +174,6 @@ Page({
       },
     });
   },
-
-  onMarkerTap: function (event) {
-    wx.navigateTo({
-      url: "../info/info?id=" + event.markerId,
-    });
-  },
-
   getOpenID: function (event) {
     wx.cloud
       .callFunction({
@@ -216,6 +209,14 @@ Page({
   /**
    * 一些页面跳转
    */
+  onMarkerTap: function (event) {
+    console.log("marker点击", event);
+    const index = event.detail.markerId;
+    const _id = this.data.stores[index]._id;
+    wx.navigateTo({
+      url: "../info/info?id=" + _id,
+    });
+  },
   viewAll: function () {
     wx.navigateTo({
       url: "../list/list",

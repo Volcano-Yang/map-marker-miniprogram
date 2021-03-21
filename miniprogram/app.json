@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/map/map",
-    "pages/list/list",
+    "pages/allList/allList",
     "pages/info/info",
     "pages/add/add",
     "pages/search/search",

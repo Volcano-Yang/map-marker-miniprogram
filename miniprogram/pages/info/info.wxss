@@ -2,72 +2,58 @@
   width: 750rpx;
 }
 
-.contact {
-  padding: 20rpx;
-}
-
-.star {
-  padding: 20rpx;
-}
-
-.keywords {
-  padding: 20rpx;
-}
-
-.notes {
-  padding: 20rpx;
-}
-
-.per {
-  padding: 20rpx;
-}
-
-.address {
-  padding: 20rpx;
-}
-
-.thumbs_up {
-  padding: 20rpx;
-}
-
-.title {
-  padding: 20rpx;
-  font-size: 50rpx;
-}
-
 swiper {
   height: 240px;
   background-color: #eee;
 }
 
-.two_column {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.content {
+  padding: 20rpx;
 }
 
-.copy_path{
+.address {
+  margin-bottom: 20rpx;
+}
+
+.location {
+  margin-bottom: 20rpx;
+}
+
+.problem {
+  font-size: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.copy_path {
   position: absolute;
   right: 100rpx;
   bottom: 50rpx;
   color: #7795f8;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
-.delete_item{
+
+.delete_item {
   position: absolute;
   left: 100rpx;
   bottom: 50rpx;
   color: #ff0000;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
-.navigateBox{
+
+
+.navigateBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 20rpx;
 }
-.navigate{
-  margin:20rpx 0rpx;
+
+.navigate {
+  margin: 20rpx 0rpx;
+  width: 80%;
+  height: 80rpx;
+  color: #fff;
+  background-color: #00a962;
 }

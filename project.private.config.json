@@ -19,10 +19,9 @@
           "query": ""
         },
         {
-          "id": 1,
-          "name": "商铺详情",
+          "name": "详情",
           "pathName": "pages/info/info",
-          "query": "id=XE0cj8DR1TiNzjpY",
+          "query": "id=28ee4e3e605329880b56996217a0c745",
           "scene": null
         },
         {
@@ -35,12 +34,6 @@
           "id": -1,
           "name": "搜索页面",
           "pathName": "pages/search/search",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "分享页",
-          "pathName": "pages/share/share",
           "query": "",
           "scene": null
         },
@@ -66,6 +59,12 @@
           "name": "地图页",
           "pathName": "pages/map/map",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "全部数据",
+          "pathName": "pages/allList/allList",
+          "query": "id=28ee4e3e605329880b56996217a0c745",
           "scene": null
         }
       ]
