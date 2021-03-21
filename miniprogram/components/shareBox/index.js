@@ -65,7 +65,7 @@ Component({
               type: "image",
               url:
                 wx.getStorageSync("avatarUrl") ||
-                "https://qiniu-image.qtshe.com/default-avatar20170707.png",
+                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/default-avatar.png?sign=70bf172250d552f97216258faa41785c&t=1616315144",
               css: {
                 top: "80rpx",
                 left: "480rpx",
@@ -140,7 +140,7 @@ Component({
             // 二维码
             {
               type: "image",
-              url: "https://qiniu-image.qtshe.com/20190605index.jpg",
+              url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpeg?sign=685083f2969f129d35e7a1297abcd194&t=1616315175",
               css: {
                 bottom: "80rpx",
                 left: "180rpx",

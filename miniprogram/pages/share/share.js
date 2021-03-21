@@ -35,13 +35,13 @@ Page({
       .where({ _openid: openId })
       .get()
       .then((res) => {
-        console.log("该用户的编号", res.data[0].id);
+        console.log("该用户的编号", res.data);
         this.setData({
           userId: res.data[0].id,
         });
       });
   },
-  
+
   getUserInfo(e) {
     this.setData({
       nickName: e.detail.userInfo.nickName,
@@ -54,6 +54,34 @@ Page({
     this.setData({
       isCanDraw: !this.data.isCanDraw,
     });
+    this.setData({
+      nickName: wx.getStorageSync("nickName") || "",
+      avatarUrl: wx.getStorageSync("avatarUrl") || "",
+    });
+
+    const openId = wx.getStorageSync("openId");
+    store
+      .where({
+        _openid: openId,
+      })
+      .count()
+      .then((res) => {
+        console.log("查询分享次数", res);
+        this.setData({
+          shareTime: res.total,
+        });
+      });
+
+    // 查询用户编号
+    userInfo
+      .where({ _openid: openId })
+      .get()
+      .then((res) => {
+        console.log("该用户的编号", res.data[0].id);
+        this.setData({
+          userId: res.data[0].id,
+        });
+      });
   },
   /**
    * 用户点击右上角分享

@@ -44,7 +44,7 @@ Page({
           wx.chooseLocation({
             success: (res) => {
               this.setData({
-                address: `${res.address}+${res.name}`,
+                address: `${res.address} ${res.name}`,
                 latitude: res.latitude,
                 longitude: res.longitude,
               });
