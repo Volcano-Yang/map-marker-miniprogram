@@ -181,7 +181,7 @@ Page({
       })
       .then((res) => {
         try {
-          wx.setStorageSync("openId", res);
+          wx.setStorageSync("openId", res.result.openid);
         } catch (e) {
           console.log("openID储存成功", res);
         }

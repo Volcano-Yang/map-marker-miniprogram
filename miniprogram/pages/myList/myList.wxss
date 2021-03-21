@@ -53,6 +53,10 @@ page {
 
 /* 日志卡片 */
 
+.item{
+    margin-right: 16px;
+}
+
 .item-top {
     display: flex;
     flex-direction: row;
@@ -81,7 +85,7 @@ page {
 }
 
 .item-address {
-    height: 26px;
+    height: 38px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
