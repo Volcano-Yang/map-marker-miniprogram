@@ -4,10 +4,23 @@
 <!-- 昵称、文案、图画介绍 -->
 <view class="content">
     <open-data type="userNickName" class="userName" lang="zh_CN"></open-data>
-    <view class="user-content">
+    <!-- 第一次上传展示的文案 -->
+    <view class="user-content" wx:if="{{shareTime === 1}}">
         已成为第
-        <text style="color:#0087e5;">{{1}}</text>
+        <text style="color:#0087e5;">{{userId}}</text>
         位上传盲道问题的筑路者，并获得视障人士分享的视界
+        <image class="art" src="../../images/share/art.png" mode="aspectFill"></image>
+        <view>《看与被看》</view>
+        <view>
+            摄影师：傅高山 |
+            <text style="color:#0087e5;">低视力</text>
+        </view>
+    </view>
+    <!-- 第一次以外上传展示的文案 -->
+    <view class="user-content" wx:else>
+        已经第
+        <text style="color:#0087e5;">{{shareTime}}</text>
+        次上传盲道问题，并获得了视障人士分享的世界
         <image class="art" src="../../images/share/art.png" mode="aspectFill"></image>
         <view>《看与被看》</view>
         <view>

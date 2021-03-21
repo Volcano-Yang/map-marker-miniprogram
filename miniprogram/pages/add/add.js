@@ -1,6 +1,9 @@
 const app = getApp();
 const db = wx.cloud.database();
 const store = db.collection("store");
+const userInfo = db.collection("userInfo");
+const _ = db.command;
+
 Page({
   /**
    * 页面的初始数据
@@ -16,7 +19,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+  },
 
   chooseLocation: function (event) {
     wx.getSetting({
@@ -51,10 +55,34 @@ Page({
     });
   },
 
+  createUserInfo: async function () {
+    const openId = wx.getStorageSync("openId");
+    const res = await userInfo.where({ _openid: openId }).count();
+    // 不存在就创建用户并设置用编号
+    if (!res.total) {
+      const res2 = await userInfo.where({ _openid: _.exists(true) }).count();
+      console.log("当前总用户数", res2.total);
+      userInfo
+        .add({
+          data: {
+            id: res2.total+1,
+            nickName: wx.getStorageSync("nickName") || "",
+            avatarUrl: wx.getStorageSync("avatarUrl") || "",
+            openId,
+          },
+        })
+        .then((res) => {
+          console.log("创建用户成功", res);
+        });
+    }
+  },
+
   createItem: function (event) {
     wx.showLoading({
       title: "上传数据中...",
     });
+
+    this.createUserInfo();
 
     store
       .add({
