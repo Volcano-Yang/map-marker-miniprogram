@@ -8,6 +8,10 @@ Component({
         newVal && this.drawPic();
       },
     },
+    drawData: {
+      type: Object,
+      value: {},
+    },
   },
   data: {
     isModal: false, //是否显示拒绝保存图片后的弹窗
@@ -25,6 +29,7 @@ Component({
       });
     },
     drawPic() {
+      console.log("drawData", this.data.drawData);
       if (this.data.sharePath) {
         //如果已经绘制过了本地保存有图片不需要重新绘制
         this.setData({
@@ -46,8 +51,7 @@ Component({
             // 图画
             {
               type: "image",
-              url:
-                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
+              url: this.data.drawData.artImage,
               css: {
                 top: "680rpx",
                 left: "260rpx",
@@ -90,7 +94,7 @@ Component({
             },
             {
               type: "text",
-              text: `已成为第`,
+              text: this.data.drawData.context1,
               css: {
                 top: "500rpx",
                 left: "250rpx",
@@ -102,11 +106,11 @@ Component({
             },
             {
               type: "text",
-              text: `1`,
+              text: ""+this.data.drawData.numberId,
               css: {
-                top: "500rpx",
-                left: "460rpx",
-                fontSize: "50rpx",
+                top: "490rpx",
+                left: "430rpx",
+                fontSize: "60rpx",
                 align: "left",
                 color: "#006de4",
                 fontWeight: "normal",
@@ -114,7 +118,7 @@ Component({
             },
             {
               type: "text",
-              text: `位上传盲道问题的筑路`,
+              text: this.data.drawData.context2,
               css: {
                 top: "500rpx",
                 left: "500rpx",
@@ -126,7 +130,7 @@ Component({
             },
             {
               type: "text",
-              text: `者，并获得了视障人士分享的视界`,
+              text: this.data.drawData.context3,
               css: {
                 top: "560rpx",
                 left: "250rpx",
@@ -140,7 +144,8 @@ Component({
             // 二维码
             {
               type: "image",
-              url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpeg?sign=685083f2969f129d35e7a1297abcd194&t=1616315175",
+              url:
+                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpeg?sign=685083f2969f129d35e7a1297abcd194&t=1616315175",
               css: {
                 bottom: "80rpx",
                 left: "180rpx",
@@ -152,7 +157,7 @@ Component({
 
             {
               type: "text",
-              text: `<<看与被看>>`,
+              text: this.data.drawData.artTitle,
               css: {
                 bottom: "540rpx",
                 left: "605rpx",
@@ -165,7 +170,7 @@ Component({
 
             {
               type: "text",
-              text: `摄影师：傅高山 |`,
+              text: this.data.drawData.artContext1,
               css: {
                 bottom: "470rpx",
                 left: "340rpx",
@@ -178,7 +183,7 @@ Component({
 
             {
               type: "text",
-              text: `低视力`,
+              text: this.data.drawData.artContext2,
               css: {
                 bottom: "470rpx",
                 left: "730rpx",
