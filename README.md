@@ -26,9 +26,9 @@
 
 | 首页 | 上传页 | 上传成功页 |
 | ---- |  ----| ----|
-|![image-20210327221447071](../../Library/Application%20Support/typora-user-images/image-20210327221447071.png) |![image-20210327221512889](../../Library/Application%20Support/typora-user-images/image-20210327221512889.png)| ![](http://qny.volcanoblog.cn/markdown/20210327221526.png) |
+|![](http://qny.volcanoblog.cn/markdown/20210327222847.png) |![](http://qny.volcanoblog.cn/markdown/20210327222910-20210327222917352.png)| ![](http://qny.volcanoblog.cn/markdown/20210327221526.png) |
 | 生成海报 | 用户上传日志 | 分享到微信 |
-| ![](http://qny.volcanoblog.cn/markdown/20210327221709.png) |![image-20210327221729940](../../Library/Application%20Support/typora-user-images/image-20210327221729940.png)|![](http://qny.volcanoblog.cn/markdown/20210327221657.png)|
+| ![](http://qny.volcanoblog.cn/markdown/20210327221709.png) |![](http://qny.volcanoblog.cn/markdown/20210327222936-20210327222945968.png)|![](http://qny.volcanoblog.cn/markdown/20210327221657.png)|
 
 ## 四、Demo 小程序
 
