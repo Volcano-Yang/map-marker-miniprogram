@@ -61,23 +61,64 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "全部内容",
-          "pathName": "pages/list/list",
-          "query": ""
-        },
-        {
-          "id": 1,
-          "name": "商铺详情",
-          "pathName": "pages/info/info",
-          "query": "id=XE0cj8DR1TiNzjpY",
+          "name": "引导页",
+          "pathName": "pages/index/index",
+          "query": "",
           "scene": null
         },
         {
-          "id": -1,
-          "name": "新增数据",
+          "name": "地图页",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "新增markers",
           "pathName": "pages/add/add",
-          "query": ""
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "上传成功分享页",
+          "pathName": "pages/share/share",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的上传日志",
+          "pathName": "pages/myList/myList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "盲道科普",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "全部数据",
+          "pathName": "pages/allList/allList",
+          "query": "id=28ee4e3e605329880b56996217a0c745",
+          "scene": null
+        },
+        {
+          "name": "文章宣传页",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查看全部markers",
+          "pathName": "pages/allList/allList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "markers详情页",
+          "pathName": "pages/info/info",
+          "query": "id=28ee4e3e605329880b56996217a0c745",
+          "scene": null
         },
         {
           "id": -1,

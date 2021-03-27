@@ -3,12 +3,12 @@
  * mapSubKey： 腾讯地图key
  */
 module.exports = {
-  "appName":"友好盲道地图",
-  "envID":"map-4g0ciu1x80002ab0",
-  "mapSubKey":"R3RBZ-QS5WQ-K525J-GOISD-KGCJ6-WAFLX",
+  "appName": "友好盲道地图",
+  "envID": "",
+  "mapSubKey": "",
   "center_longitude": 113.942304,
   "center_latitude": 22.529544,
-  "dynamic_title":true,
-  "show_admin":false,
-  "default_scale":16
+  "dynamic_title": true,
+  "show_admin": false,
+  "default_scale": 16
 }
