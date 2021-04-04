@@ -14,13 +14,17 @@ Page({
     imagesTempUrl: [],
     content: "",
     iconPath: "",
+    titleColor: {
+      address: "black",
+      problemLabel: "black",
+      images: "black",
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function (options) {},
 
   chooseLocation: function (event) {
     wx.getSetting({
@@ -32,7 +36,8 @@ Page({
               wx.chooseLocation({
                 success: (res) => {
                   this.setData({
-                    address: `${res.address} ${res.name}`,
+                    // address: `${res.address} ${res.name}`,
+                    address: `${res.name}`,
                     latitude: res.latitude,
                     longitude: res.longitude,
                   });
@@ -44,7 +49,8 @@ Page({
           wx.chooseLocation({
             success: (res) => {
               this.setData({
-                address: `${res.address} ${res.name}`,
+                // address: `${res.address} ${res.name}`,
+                address: `${res.name}`,
                 latitude: res.latitude,
                 longitude: res.longitude,
               });
@@ -57,15 +63,19 @@ Page({
 
   createUserInfo: async function () {
     const openId = wx.getStorageSync("openId");
-    const res = await userInfo.where({ _openid: openId }).count();
+    const res = await userInfo.where({
+      _openid: openId
+    }).count();
     // 不存在就创建用户并设置用编号
     if (!res.total) {
-      const res2 = await userInfo.where({ _openid: _.exists(true) }).count();
+      const res2 = await userInfo.where({
+        _openid: _.exists(true)
+      }).count();
       console.log("当前总用户数", res2.total);
       userInfo
         .add({
           data: {
-            id: res2.total+1,
+            id: res2.total + 1,
             nickName: wx.getStorageSync("nickName") || "",
             avatarUrl: wx.getStorageSync("avatarUrl") || "",
             openId,
@@ -78,40 +88,52 @@ Page({
   },
 
   createItem: function (event) {
-    wx.showLoading({
-      title: "上传数据中...",
-    });
-
-    this.createUserInfo();
-
-    store
-      .add({
-        data: {
-          createTime: new Date(),
-          address: this.data.address,
-          longitude: this.data.longitude,
-          latitude: this.data.latitude,
-          problemLabel: this.data.problemLabel,
-          iconPath: this.data.iconPath,
-          images: this.data.images,
-          content: event.detail.value.content,
-        },
-      })
-      .then((res) => {
-        wx.hideLoading();
-        wx.showToast({
-          title: "创建成功！",
-          icon: "success",
-          success: (res) => {
-            wx.navigateTo({
-              url: "../share/share",
-            });
-          },
-        });
-      })
-      .catch((error) => {
-        console.error(error);
+    this.setData({
+      titleColor: {
+        address: (!this.data.address || !this.data.longitude) ? "red" : "black",
+        problemLabel: !this.data.problemLabel ? "red" : "black",
+        images: !this.data.images.length ? "red" : "black",
+      }
+    })
+    if (!this.data.address || !this.data.longitude || !this.data.problemLabel || !this.data.images.length) {
+      wx.showToast({
+        title: "必填项缺少",
+        icon: "error",
       });
+    } else {
+      wx.showLoading({
+        title: "上传数据中...",
+      });
+      this.createUserInfo();
+      store
+        .add({
+          data: {
+            createTime: new Date(),
+            address: this.data.address,
+            longitude: this.data.longitude,
+            latitude: this.data.latitude,
+            problemLabel: this.data.problemLabel,
+            iconPath: this.data.iconPath,
+            images: this.data.images,
+            content: event.detail.value.content,
+          },
+        })
+        .then((res) => {
+          wx.hideLoading();
+          wx.showToast({
+            title: "创建成功！",
+            icon: "success",
+            success: (res) => {
+              wx.navigateTo({
+                url: "../share/share",
+              });
+            },
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   },
 
   getImageUrl: function (fileList) {
@@ -143,7 +165,9 @@ Page({
       sizeType: ["original", "compressed"],
       sourceType: ["album", "camera"],
       success: (res) => {
-        wx.showLoading({ title: "上传中" });
+        wx.showLoading({
+          title: "上传中"
+        });
         let tempFilePaths = res.tempFilePaths;
         let items = [];
         for (const tempFilePath of tempFilePaths) {
@@ -166,22 +190,29 @@ Page({
 
             images.push(...urls);
 
-            this.setData(
-              {
+            this.setData({
                 images,
               },
               (res) => {
                 wx.hideLoading();
-                wx.showToast({ title: "上传图片成功", icon: "success" });
+                wx.showToast({
+                  title: "上传图片成功",
+                  icon: "success"
+                });
               }
             );
           })
           .catch(() => {
             wx.hideLoading();
-            wx.showToast({ title: "上传图片错误", icon: "error" });
+            wx.showToast({
+              title: "上传图片错误",
+              icon: "error"
+            });
           });
 
-        this.setData({ tempPhoto: items });
+        this.setData({
+          tempPhoto: items
+        });
       },
     });
   },
@@ -215,4 +246,9 @@ Page({
       iconPath,
     });
   },
+  goToArticle: function () {
+    wx.navigateTo({
+      url: '../article/article',
+    })
+  }
 });

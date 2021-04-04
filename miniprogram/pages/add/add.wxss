@@ -14,6 +14,8 @@ page {
   padding: 20rpx 20rpx 20rpx 0;
   font-size: 18px;
   font-weight: normal;
+  display: flex;
+  flex-direction: row;
 }
 
 .item-desc {
@@ -49,4 +51,9 @@ textarea {
   width: 100%;
   background-color: #007ae7;
   color: #ffffff;
+}
+
+.is-ness:before {
+  content: '* ';
+  color: red;
 }

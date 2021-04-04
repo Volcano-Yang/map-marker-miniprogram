@@ -1,14 +1,17 @@
 <view class="form" report-submit='true' onsubmit="createItem">
   <form report-submit='true' onsubmit="createItem">
     <view class="form-item">
-      <view class='item-title'>当前定位</view>
+      <view class='item-title .is-ness' style="color:{{titleColor.address}}">当前定位</view>
       <view class="loactionGroup">
         <input placeholder='定位后会自动标记' name="address" value='{{address}}'></input>
         <van-icon name="location-o" size="25px" bindtap='chooseLocation' />
       </view>
     </view>
     <view class="form-item">
-      <view class='item-title'>盲道问题</view>
+      <view class='item-title .is-ness' style="color:{{titleColor.problemLabel}}">
+        盲道问题
+        <van-icon name="question-o" style="margin-left: 8px;" bindtap="goToArticle" />
+      </view>
       <van-radio-group value='{{problemLabel}}' bind:change="onChangeRadio" class="radio">
         <van-row>
           <van-col span="8">
@@ -23,9 +26,9 @@
         </van-row>
       </van-radio-group>
     </view>
-    <view class="form-item">
-      <view class='item-title'>图片上传</view>
-      <view class="item-desc">请上传两张完整且清晰的盲道问题图片</view>
+    <view class="form-item" style="color:{{titleColor.images}}">
+      <view class='item-title .is-ness'>图片上传</view>
+      <view class="item-desc">请最多上传两张完整且清晰的盲道问题图片</view>
       <van-uploader file-list="{{ imagesTempUrl }}" disabled="true" bindtap="uploadImage" />
     </view>
     <view class="form-item">
