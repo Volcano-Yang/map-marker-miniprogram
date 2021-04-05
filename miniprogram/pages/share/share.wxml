@@ -19,7 +19,7 @@
 <!-- 分享朋友圈按钮 -->
 <button class="share-wechat" open-type="share" bindtap="onShareAppMessage" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/wechat.png?sign=706bf35e4ec8dbba99a60df95beccf47&t=1616242389);border: none;"></button>
 <!-- 生成图片按钮 -->
-<button class="create-image" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/png.png?sign=41f6bb27d8704f4cb0f51b5aa1b2bb1f&t=1616242419); border: none;" wx:if="{{!nickName}}"></button>
+<button class="create-image" bindtap="getUserInfo" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/png.png?sign=41f6bb27d8704f4cb0f51b5aa1b2bb1f&t=1616242419); border: none;" wx:if="{{!nickName}}"></button>
 <button class="create-image" bindtap="createShareImage" plain="true" style="background-image:url(https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/png.png?sign=41f6bb27d8704f4cb0f51b5aa1b2bb1f&t=1616242419);border: none;" wx:else></button>
 <!-- 图片生成之后的预览弹窗 -->
 <share-box isCanDraw="{{isCanDraw}}" drawData="{{drawData}}" bind:initData="createShareImage" />

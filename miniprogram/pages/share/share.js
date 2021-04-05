@@ -34,7 +34,9 @@ Page({
     // 用户首次分享和非首次分享文案不同
     if (shareTime === 1) {
       // 查询用户编号
-      const userIdRes = await userInfo.where({ _openid: openId }).get();
+      const userIdRes = await userInfo.where({
+        _openid: openId
+      }).get();
       console.log("该用户的编号", userIdRes.data);
       const userId = userIdRes.data[0].id;
       this.setData({
@@ -43,8 +45,7 @@ Page({
           numberId: userId,
           context2: "位上传盲道问题的筑路",
           context3: "者，并获得了视障人士分享的视界",
-          artImage:
-            "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
+          artImage: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
           artTitle: "《看与被看》",
           artContext1: "摄影师：傅高山 |",
           artContext2: "低视力",
@@ -57,8 +58,7 @@ Page({
           numberId: shareTime,
           context2: "次上传盲道问题，并",
           context3: "获得了视障人士分享的视界",
-          artImage:
-            "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
+          artImage: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
           artTitle: "《看与被看》",
           artContext1: "摄影师：傅高山 |",
           artContext2: "低视力",
@@ -71,6 +71,22 @@ Page({
       isCanDraw: !this.data.isCanDraw,
     });
   },
+  getUserInfo(e) {
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    wx.getUserProfile({
+      desc: '用于生成海报', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          nickName: res.userInfo.nickName,
+          avatarUrl: res.userInfo.avatarUrl,
+        })
+        wx.setStorageSync("avatarUrl", res.userInfo.avatarUrl);
+        wx.setStorageSync("nickName", res.userInfo.nickName);
+        this.createShareImage
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */
@@ -78,8 +94,7 @@ Page({
     return {
       title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
-      imageUrl:
-        "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
+      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
     };
   },
   /**
@@ -89,8 +104,7 @@ Page({
     return {
       title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
-      imageUrl:
-        "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
+      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
     };
   },
   /**
