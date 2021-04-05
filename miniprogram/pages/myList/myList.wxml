@@ -6,7 +6,9 @@
 </view>
 <view class="divider"></view>
 <view class="isEmpty" wx:if="{{isEmpty}}">
-    <image class="isEmpty-image" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/icon/isEmpty.png?sign=ce735d6a48007dacd83ab5d611d00759&t=1616208228"></image>
+    <image class="isEmpty-image"
+        src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/icon/isEmpty.png?sign=ce735d6a48007dacd83ab5d611d00759&t=1616208228">
+    </image>
     <view>你还没有日志记录哦</view>
     <view>快去上传吧~</view>
 </view>
@@ -22,11 +24,19 @@
                 {{item.address}}
             </view>
             <view class="item-content">你第{{index+1}}次上传了{{item.problemLabel}}问题，帮助了友好地图的修筑。</view>
-            <swiper wx:if="{{item.images.length}}" class="item-swiper" indicator-dots="true" autoplay="true" interval="{{5000}}" duration="{{1000}}">
+            <view class="imgList">
+                <view wx:if="{{item.images.length}}" wx:for="{{item.images}}" wx:key="{{index}}"
+                    wx:for-item="itemImagesUrl">
+                    <image class="img" src='{{itemImagesUrl}}' mode='aspectFill'
+                        data-url="{{itemImagesUrl}}" bindtap="tapImage">
+                    </image>
+                </view>
+            </view>
+            <!-- <swiper wx:if="{{item.images.length}}" class="item-swiper" indicator-dots="true" autoplay="true" interval="{{5000}}" duration="{{1000}}">
                 <swiper-item wx:for="{{item.images}}" wx:for-item="itemImagesUrl">
                     <image class="item-images" mode="aspectFill" src="{{itemImagesUrl}}" data-url="{{itemImagesUrl}}" bindtap="tapImage" />
                 </swiper-item>
-            </swiper>
+            </swiper> -->
         </view>
     </view>
     <van-divider contentPosition="center" customStyle="font-size:12px;color: #c9c9c9;margin-bottom:50px;">

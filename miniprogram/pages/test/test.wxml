@@ -1,0 +1,21 @@
+<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{images.length}}/2
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{images}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{images[index]}}">
+				<image src='{{images[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="uploadImage" wx:if="{{images.length<2}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>

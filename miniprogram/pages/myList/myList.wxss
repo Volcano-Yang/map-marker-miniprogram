@@ -53,7 +53,7 @@ page {
 
 /* 日志卡片 */
 
-.item{
+.item {
     margin-right: 16px;
 }
 
@@ -113,3 +113,16 @@ page {
     width: 250px;
     height: 200px;
 } */
+
+.imgList {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    margin: 0px 5px 0px;
+}

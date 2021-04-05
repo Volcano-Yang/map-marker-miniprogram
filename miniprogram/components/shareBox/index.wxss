@@ -80,5 +80,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50rpx;
+  border-radius: 40rpx;
 }

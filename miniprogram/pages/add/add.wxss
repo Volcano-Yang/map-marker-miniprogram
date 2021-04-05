@@ -1,3 +1,5 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
 page {
   background-color: #ffffff;
 }
@@ -31,14 +33,9 @@ page {
 
 .loactionGroup input {
   width: 80%;
+  height: 40rpx;
   margin-left: 5px;
   border: none;
-}
-
-input {
-  border: 1px solid #dededd;
-  padding: 20rpx;
-  width: 80%;
 }
 
 textarea {
