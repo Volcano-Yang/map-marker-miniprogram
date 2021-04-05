@@ -31,7 +31,8 @@ page {
 
 .loactionGroup input {
   width: 80%;
-  margin-right: 18px;
+  margin-left: 5px;
+  border: none;
 }
 
 input {

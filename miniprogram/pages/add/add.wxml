@@ -2,9 +2,9 @@
   <form report-submit='true' onsubmit="createItem">
     <view class="form-item">
       <view class='item-title .is-ness' style="color:{{titleColor.address}}">当前定位</view>
-      <view class="loactionGroup">
-        <input placeholder='定位后会自动标记' name="address" value='{{address}}'></input>
-        <van-icon name="location-o" size="25px" bindtap='chooseLocation' />
+      <view class="loactionGroup" bindtap='chooseLocation'>
+        <van-icon name="location-o" size="25px" />
+        <input placeholder='点击获取当前所在位置' name="address" value='{{address}}' disabled="true"></input>
       </view>
     </view>
     <view class="form-item">

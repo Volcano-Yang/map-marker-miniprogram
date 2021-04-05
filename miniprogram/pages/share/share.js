@@ -42,7 +42,7 @@ Page({
           context1: "已成为",
           numberId: userId,
           context2: "位上传盲道问题的筑路",
-          context3: "者，并获得了视障人士分享的世界",
+          context3: "者，并获得了视障人士分享的视界",
           artImage:
             "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
           artTitle: "《看与被看》",
@@ -56,7 +56,7 @@ Page({
           context1: "已经第",
           numberId: shareTime,
           context2: "次上传盲道问题，并",
-          context3: "获得了视障人士分享的世界",
+          context3: "获得了视障人士分享的视界",
           artImage:
             "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
           artTitle: "《看与被看》",
@@ -92,5 +92,13 @@ Page({
       imageUrl:
         "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
     };
+  },
+  /**
+   * 修改返回上一页的路径
+   */
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../index/index'
+    })
   },
 });
