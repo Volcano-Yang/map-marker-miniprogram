@@ -1,7 +1,7 @@
 page {
   width: 750rpx;
   background-color: #69aff1;
-  background-image: url("https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page.png?sign=fa7bffaf0077ea3d85c5db6556debf89&t=1616242257");
+  background-image: url("https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-page2.png?sign=8abad4226cef1ca7f2174c9d89af6b93&t=1617611501");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -55,7 +55,7 @@ page {
 .share-wechat {
   background-size: 110rpx 110rpx;
   position: absolute;
-  top: 1000rpx;
+  bottom: 57rpx;
   left: 164rpx;
   width: 110rpx;
   height: 110rpx;
@@ -65,7 +65,7 @@ page {
 .create-image {
   background-size: 110rpx 110rpx;
   position: absolute;
-  top: 1000rpx;
+  bottom: 57rpx;
   right: 164rpx;
   width: 110rpx;
   height: 110rpx;

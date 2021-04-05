@@ -16,7 +16,8 @@
 
 .share-container {
   width: 100%;
-  background: #FFF;
+  height: 100vh;
+  color: #3C3C3C;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -54,8 +55,8 @@
 }
 
 .share-image {
-  width: 420rpx;
-  margin: 66rpx auto 0;
+  width: 80%;
+  margin: 110rpx auto 20rpx;
   display: block;
   border-radius: 16rpx;
   box-shadow: 0px 4rpx 8px 0px rgba(0, 0, 0, 0.1);
@@ -70,9 +71,14 @@
 }
 
 .save-btn {
+  color: #fff;
+  font-size: 36rpx;
   width: 336rpx;
-  height: 96rpx;
-  margin: 0 auto 94rpx;
-  background: url('https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/save-btn.png?sign=e3d6318007e609aa588c0bf66b1f44de&t=1616315126') center center;
-  background-size: 100% 100%;
+  height: 80rpx;
+  margin: 0rpx auto 94rpx;
+  background-color: #007ae8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
 }

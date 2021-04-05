@@ -60,7 +60,7 @@ Component({
                 borderRadius: "16rpx",
                 borderWidth: "20rpx",
                 borderColor: "#ffffff",
-                shadow: "0px 1px 5px #B8B8B8",
+                shadow: "10rpx 10rpx 5rpx #64afee",
               },
             },
 
@@ -145,7 +145,7 @@ Component({
             {
               type: "image",
               url:
-                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpeg?sign=685083f2969f129d35e7a1297abcd194&t=1616315175",
+                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
               css: {
                 bottom: "80rpx",
                 left: "180rpx",
@@ -226,7 +226,7 @@ Component({
         filePath: path,
         success: (res) => {
           wx.showToast({
-            title: "保存成功",
+            title: "图片已保存到相册，快去朋友圈分享吧",
             icon: "none",
           });
           setTimeout(() => {
