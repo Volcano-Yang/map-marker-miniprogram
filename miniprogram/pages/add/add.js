@@ -96,7 +96,7 @@ Page({
     })
     if (!this.data.address || !this.data.longitude || !this.data.problemLabel || !this.data.images.length) {
       wx.showToast({
-        title: "必填项缺少",
+        title: "缺少必填项",
         icon: "error",
       });
     } else {

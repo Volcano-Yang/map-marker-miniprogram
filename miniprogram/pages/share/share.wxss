@@ -55,7 +55,7 @@ page {
 .share-wechat {
   background-size: 110rpx 110rpx;
   position: absolute;
-  bottom: 57rpx;
+  top: 1000rpx;
   left: 164rpx;
   width: 110rpx;
   height: 110rpx;
@@ -65,7 +65,7 @@ page {
 .create-image {
   background-size: 110rpx 110rpx;
   position: absolute;
-  bottom: 57rpx;
+  top: 1000rpx;
   right: 164rpx;
   width: 110rpx;
   height: 110rpx;

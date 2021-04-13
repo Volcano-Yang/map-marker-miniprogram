@@ -15,14 +15,14 @@ map {
   text-align: center;
 }
 
-.nav{
+.nav {
   position: absolute;
   width: 300px;
   left: calc(50% - 150px);
-  bottom: 20px;
+  bottom: 20rpx;
   background-color: rgb(255, 255, 255);
   border-radius: 50rpx;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 3px 3px 2px #bbbcbc;
 }
 
 /* 底部导航栏 */
@@ -33,7 +33,7 @@ map {
   align-items: center;
 }
 
-.nav-tabbar-image{
+.nav-tabbar-image {
   width: 20px;
   height: 20px;
   margin-bottom: 3px;
@@ -74,14 +74,14 @@ map {
   align-items: center;
 }
 
-.add{
+.add {
   width: 60px;
   height: 60px;
   font-size: 25rpx;
   color: #fff;
   background-color: #0079e7;
   border-radius: 50%;
-  overflow:hidden;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -102,9 +102,11 @@ map {
 /* 问题列表 */
 .numberList {
   position: absolute;
-  right: 12px;
-  top: 60px;
+  right: 30rpx;
+  top: 20rpx;
   text-align: center;
+  background-color: #fff;
+  box-shadow: 3px 3px 2px #bbbcbc;
 }
 
 .numberList-item {
@@ -114,7 +116,13 @@ map {
   justify-content: center;
   align-items: center;
   padding: 10px 5px 10px 4px;
-  box-shadow: 2px 1px 3px #999999;
+}
+
+.numberList-item-line {
+  height: 1px;
+  width: 80%;
+  margin: 0px auto;
+  background-color: #ededed;
 }
 
 .numberList-item-image {

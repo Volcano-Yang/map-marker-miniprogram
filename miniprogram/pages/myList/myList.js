@@ -59,7 +59,7 @@ Page({
     return {
       title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
-      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
+      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=d0236b01a9f4f1255d06109ef4a3fa91&t=1618313697",
     };
   },
   /**
@@ -69,7 +69,7 @@ Page({
     return {
       title: "我在友好盲道地图上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
-      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=12f3587ba61b1d8d20c6fe77523514ec&t=1616382630",
+      imageUrl: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/share-pre.jpg?sign=d0236b01a9f4f1255d06109ef4a3fa91&t=1618313697",
     };
   },
 

@@ -1,4 +1,5 @@
-<map id="map" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" bindmarkertap="onMarkerTap" show-location="true" enable-building="true" enable-3D="true">
+<map id="map" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}"
+  subkey="{{mapSubKey}}" bindmarkertap="onMarkerTap" show-location="true" enable-building="true" enable-3D="true">
   <!-- 中心点标记点 -->
   <!-- <cover-view class="center">
     <cover-image style="" src="/images/home/center-marker.png"></cover-image>
@@ -16,6 +17,7 @@
         <cover-view style="font-size:10px;">设计</cover-view>
       </cover-view>
     </cover-view>
+    <cover-view class="numberList-item-line"></cover-view>
     <cover-view class="numberList-item">
       <cover-image class="numberList-item-image" src="/images/home/occupy.png"></cover-image>
       <cover-view class="numberList-item-text">
@@ -23,6 +25,7 @@
         <cover-view style="font-size:10px;">占用</cover-view>
       </cover-view>
     </cover-view>
+    <cover-view class="numberList-item-line"></cover-view>
     <cover-view class="numberList-item">
       <cover-image class="numberList-item-image" src="/images/home/error.png"></cover-image>
       <cover-view class="numberList-item-text">
