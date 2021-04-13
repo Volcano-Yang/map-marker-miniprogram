@@ -23,7 +23,7 @@
                 <van-icon name="location-o" color="#007ae7" style="margin-right:5px;" />
                 {{item.address}}
             </view>
-            <view class="item-content">你第{{index+1}}次上传了{{item.problemLabel}}问题，帮助了友好地图的修筑。</view>
+            <view class="item-content">你第{{item.id+1}}次上传了{{item.problemLabel}}问题，帮助了友好地图的修筑。</view>
             <view class="imgList">
                 <view wx:if="{{item.images.length}}" wx:for="{{item.images}}" wx:key="{{index}}"
                     wx:for-item="itemImagesUrl">

@@ -1,6 +1,7 @@
 /* miniprogram/pages/myList/myList.wxss */
 page {
     overflow: scroll;
+    width: 750rpx;
 }
 
 .userInfo {
@@ -61,7 +62,7 @@ page {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 20px 0 20px;
+    padding: 10px 20px 30rpx 20px;
 }
 
 .item-icon {
@@ -74,7 +75,7 @@ page {
 }
 
 .item-title {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .item-bottom {
@@ -85,21 +86,20 @@ page {
 }
 
 .item-address {
-    height: 38px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     line-height: 14px;
     font-size: 12px;
-    color: #d8d8d8;
-    margin-bottom: 6px;
+    color: #4d4d4d;
+    margin-bottom: 30rpx;
 }
 
 .item-content {
     line-height: 16px;
     font-size: 14px;
-    padding-bottom: 6px;
+    margin-bottom: 30rpx;
 }
 
 .item-swiper {
@@ -122,7 +122,7 @@ page {
 }
 
 .img {
-    width: 100px;
-    height: 100px;
+    width: 271rpx;
+    height: 271rpx;
     margin: 0px 5px 0px;
 }

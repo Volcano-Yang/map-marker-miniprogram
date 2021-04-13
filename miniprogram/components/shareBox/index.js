@@ -41,161 +41,312 @@ Component({
       wx.showLoading({
         title: "生成中",
       });
-      this.setData({
-        imgDraw: {
-          width: "1210rpx",
-          height: "1830rpx",
-          background:
-            "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/poster.png?sign=8e64452badeadc8e80770a1b6bcf6a67&t=1616160878",
-          views: [
-            // 图画
-            {
-              type: "image",
-              url: this.data.drawData.artImage,
-              css: {
-                top: "680rpx",
-                left: "260rpx",
-                width: "674rpx",
-                height: "500rpx",
-                borderRadius: "16rpx",
-                borderWidth: "20rpx",
-                borderColor: "#ffffff",
-                shadow: "10rpx 10rpx 5rpx #64afee",
+      if (this.data.drawData.context1 === "已经第") {
+        // 下次这个画布宽度最好就按iphone6的750rpx定
+        this.setData({
+          imgDraw: {
+            width: "1210rpx",
+            height: "1830rpx",
+            background: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/poster.png?sign=8e64452badeadc8e80770a1b6bcf6a67&t=1616160878",
+            views: [
+              // 图画
+              {
+                type: "image",
+                url: this.data.drawData.artImage,
+                css: {
+                  top: "680rpx",
+                  left: "260rpx",
+                  width: "674rpx",
+                  height: "500rpx",
+                  borderWidth: "20rpx",
+                  borderColor: "#ffffff",
+                  shadow: "10rpx 10rpx 5rpx #64afee",
+                },
               },
-            },
 
-            // 头像
-            {
-              type: "image",
-              url:
-                wx.getStorageSync("avatarUrl") ||
-                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/default-avatar.png?sign=70bf172250d552f97216258faa41785c&t=1616315144",
-              css: {
-                top: "80rpx",
-                left: "480rpx",
-                width: "254rpx",
-                height: "254rpx",
-                borderWidth: "3rpx",
-                borderColor: "#0063a9",
-                borderRadius: "127rpx",
+              // 头像
+              {
+                type: "image",
+                url: wx.getStorageSync("avatarUrl") ||
+                  "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/default-avatar.png?sign=70bf172250d552f97216258faa41785c&t=1616315144",
+                css: {
+                  top: "80rpx",
+                  left: "480rpx",
+                  width: "254rpx",
+                  height: "254rpx",
+                  borderWidth: "3rpx",
+                  borderColor: "#0063a9",
+                  borderRadius: "127rpx",
+                },
               },
-            },
-            {
-              type: "text",
-              text: wx.getStorageSync("nickName") || "微信昵称获取失败",
-              css: {
-                top: "360rpx",
-                left: "600rpx",
-                fontSize: "80rpx",
-                align: "center",
-                color: "black",
-                fontWeight: "bolder",
+              {
+                type: "text",
+                text: wx.getStorageSync("nickName") || "微信昵称获取失败",
+                css: {
+                  top: "360rpx",
+                  left: "600rpx",
+                  fontSize: "68rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "bolder",
+                },
               },
-            },
-            {
-              type: "text",
-              text: this.data.drawData.context1,
-              css: {
-                top: "500rpx",
-                left: "250rpx",
-                fontSize: "50rpx",
-                align: "left",
-                color: "black",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.context1,
+                css: {
+                  top: "500rpx",
+                  left: "290rpx",
+                  fontSize: "48rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
               },
-            },
-            {
-              type: "text",
-              text: ""+this.data.drawData.numberId,
-              css: {
-                top: "490rpx",
-                left: "430rpx",
-                fontSize: "60rpx",
-                align: "left",
-                color: "#006de4",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: "" + this.data.drawData.numberId,
+                css: {
+                  top: "500rpx",
+                  left: "440rpx",
+                  fontSize: "48rpx",
+                  align: "left",
+                  color: "#006de4",
+                  fontWeight: "normal",
+                },
               },
-            },
-            {
-              type: "text",
-              text: this.data.drawData.context2,
-              css: {
-                top: "500rpx",
-                left: "500rpx",
-                fontSize: "50rpx",
-                align: "left",
-                color: "black",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.context2,
+                css: {
+                  top: "500rpx",
+                  left: "500rpx",
+                  fontSize: "48rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
               },
-            },
-            {
-              type: "text",
-              text: this.data.drawData.context3,
-              css: {
-                top: "560rpx",
-                left: "250rpx",
-                fontSize: "50rpx",
-                align: "left",
-                color: "black",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.context3,
+                css: {
+                  top: "570rpx",
+                  left: "605rpx",
+                  fontSize: "48rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "normal",
+                },
               },
-            },
 
-            // 二维码
-            {
-              type: "image",
-              url:
-                "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
-              css: {
-                bottom: "80rpx",
-                left: "180rpx",
-                width: "220rpx",
-                height: "220rpx",
-                borderRadius: "110rpx",
+              // 二维码
+              {
+                type: "image",
+                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
+                css: {
+                  bottom: "80rpx",
+                  left: "180rpx",
+                  width: "220rpx",
+                  height: "220rpx",
+                  borderRadius: "110rpx",
+                },
               },
-            },
 
-            {
-              type: "text",
-              text: this.data.drawData.artTitle,
-              css: {
-                bottom: "540rpx",
-                left: "605rpx",
-                fontSize: "50rpx",
-                align: "center",
-                color: "black",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.artTitle,
+                css: {
+                  bottom: "540rpx",
+                  left: "605rpx",
+                  fontSize: "50rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "normal",
+                },
               },
-            },
 
-            {
-              type: "text",
-              text: this.data.drawData.artContext1,
-              css: {
-                bottom: "470rpx",
-                left: "340rpx",
-                fontSize: "50rpx",
-                align: "left",
-                color: "black",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.artContext1,
+                css: {
+                  bottom: "470rpx",
+                  left: "340rpx",
+                  fontSize: "50rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
               },
-            },
 
-            {
-              type: "text",
-              text: this.data.drawData.artContext2,
-              css: {
-                bottom: "470rpx",
-                left: "730rpx",
-                fontSize: "50rpx",
-                align: "left",
-                color: "#006de4",
-                fontWeight: "normal",
+              {
+                type: "text",
+                text: this.data.drawData.artContext2,
+                css: {
+                  bottom: "470rpx",
+                  left: "730rpx",
+                  fontSize: "50rpx",
+                  align: "left",
+                  color: "#006de4",
+                  fontWeight: "normal",
+                },
               },
-            },
-          ],
-        },
-      });
+            ],
+          },
+        });
+      } else {
+        this.setData({
+          imgDraw: {
+            width: "1210rpx",
+            height: "1830rpx",
+            background: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/poster.png?sign=8e64452badeadc8e80770a1b6bcf6a67&t=1616160878",
+            views: [
+              // 图画
+              {
+                type: "image",
+                url: this.data.drawData.artImage,
+                css: {
+                  top: "680rpx",
+                  left: "260rpx",
+                  width: "674rpx",
+                  height: "500rpx",
+                  borderWidth: "20rpx",
+                  borderColor: "#ffffff",
+                  shadow: "10rpx 10rpx 5rpx #64afee",
+                },
+              },
+
+              // 头像
+              {
+                type: "image",
+                url: wx.getStorageSync("avatarUrl") ||
+                  "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/default-avatar.png?sign=70bf172250d552f97216258faa41785c&t=1616315144",
+                css: {
+                  top: "80rpx",
+                  left: "480rpx",
+                  width: "254rpx",
+                  height: "254rpx",
+                  borderWidth: "3rpx",
+                  borderColor: "#0063a9",
+                  borderRadius: "127rpx",
+                },
+              },
+              {
+                type: "text",
+                text: wx.getStorageSync("nickName") || "微信昵称获取失败",
+                css: {
+                  top: "360rpx",
+                  left: "600rpx",
+                  fontSize: "68rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "bolder",
+                },
+              },
+              {
+                type: "text",
+                text: this.data.drawData.context1,
+                css: {
+                  top: "500rpx",
+                  left: "245rpx",
+                  fontSize: "48rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
+              },
+              {
+                type: "text",
+                text: "" + this.data.drawData.numberId,
+                css: {
+                  top: "500rpx",
+                  left: "470rpx",
+                  fontSize: "48rpx",
+                  align: "center",
+                  color: "#006de4",
+                  fontWeight: "normal",
+                },
+              },
+              {
+                type: "text",
+                text: this.data.drawData.context2,
+                css: {
+                  top: "500rpx",
+                  left: "500rpx",
+                  fontSize: "48rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
+              },
+              {
+                type: "text",
+                text: this.data.drawData.context3,
+                css: {
+                  top: "570rpx",
+                  left: "605rpx",
+                  fontSize: "48rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "normal",
+                },
+              },
+
+              // 二维码
+              {
+                type: "image",
+                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
+                css: {
+                  bottom: "80rpx",
+                  left: "180rpx",
+                  width: "220rpx",
+                  height: "220rpx",
+                  borderRadius: "110rpx",
+                },
+              },
+
+              {
+                type: "text",
+                text: this.data.drawData.artTitle,
+                css: {
+                  bottom: "540rpx",
+                  left: "605rpx",
+                  fontSize: "50rpx",
+                  align: "center",
+                  color: "black",
+                  fontWeight: "normal",
+                },
+              },
+
+              {
+                type: "text",
+                text: this.data.drawData.artContext1,
+                css: {
+                  bottom: "470rpx",
+                  left: "340rpx",
+                  fontSize: "50rpx",
+                  align: "left",
+                  color: "black",
+                  fontWeight: "normal",
+                },
+              },
+
+              {
+                type: "text",
+                text: this.data.drawData.artContext2,
+                css: {
+                  bottom: "470rpx",
+                  left: "730rpx",
+                  fontSize: "50rpx",
+                  align: "left",
+                  color: "#006de4",
+                  fontWeight: "normal",
+                },
+              },
+            ],
+          },
+        });
+      }
     },
     onImgErr(e) {
       wx.hideLoading();

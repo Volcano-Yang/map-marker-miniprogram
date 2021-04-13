@@ -33,7 +33,7 @@ Page({
         console.log(res.data);
         // 处理数据日期 和 添加id
         this.setData({
-            store,
+            store:store.reverse(),
           },
           (res) => {
             console.log("设置数据成功");

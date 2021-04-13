@@ -41,7 +41,7 @@ Page({
       const userId = userIdRes.data[0].id;
       this.setData({
         drawData: {
-          context1: "已成为",
+          context1: "已成为第",
           numberId: userId,
           context2: "位上传盲道问题的筑路",
           context3: "者，并获得了视障人士分享的视界",
@@ -83,7 +83,7 @@ Page({
         })
         wx.setStorageSync("avatarUrl", res.userInfo.avatarUrl);
         wx.setStorageSync("nickName", res.userInfo.nickName);
-        this.createShareImage
+        this.createShareImage()
       }
     })
   },
@@ -112,7 +112,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../index/index'
+      url: '../map/map'
     })
   },
 });
