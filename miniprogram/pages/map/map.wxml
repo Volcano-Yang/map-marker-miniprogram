@@ -62,4 +62,15 @@
     <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID'
       lang='zh_CN'>上传</button>
   </cover-view> -->
+  <!-- <cover-view slot="callout">
+    <block wx:for="{{stores}}" wx:key="id">
+      <cover-view class="customCallout" marker-id="{{item.id}}">
+        <image class="customCallout-image" mode="aspectFill" src="{{item.images[0]}}"></image>
+        <cover-view class="customCallout-text">
+          上传者：测试dsadsadasfsafsafsaj
+        </cover-view>
+        <cover-view class="trangle"></cover-view>
+      </cover-view>
+    </block>
+  </cover-view> -->
 </map>

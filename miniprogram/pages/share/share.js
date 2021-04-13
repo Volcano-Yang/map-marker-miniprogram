@@ -2,6 +2,7 @@ const app = getApp();
 const db = wx.cloud.database();
 const store = db.collection("store");
 const userInfo = db.collection("userInfo");
+const artList = require("./art")
 
 Page({
   data: {
@@ -45,10 +46,10 @@ Page({
           numberId: userId,
           context2: "位上传盲道问题的筑路",
           context3: "者，并获得了视障人士分享的视界",
-          artImage: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
-          artTitle: "《看与被看》",
-          artContext1: "摄影师：傅高山 |",
-          artContext2: "低视力",
+          artImage: artList[userId % 30].artUrl,
+          artTitle: artList[userId % 30].artName,
+          artContext1: `摄影师：${artList[userId % 30].photographer} |`,
+          artContext2: artList[userId % 30].other,
         },
       });
     } else {
@@ -58,10 +59,10 @@ Page({
           numberId: shareTime,
           context2: "次上传盲道问题，并",
           context3: "获得了视障人士分享的视界",
-          artImage: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/poster/art.png?sign=732932151b7b452221a989d97a46f7ba&t=1616160915",
-          artTitle: "《看与被看》",
-          artContext1: "摄影师：傅高山 |",
-          artContext2: "低视力",
+          artImage: artList[shareTime % 30].artUrl,
+          artTitle: artList[shareTime % 30].artName,
+          artContext1: `摄影师：${artList[shareTime % 30].photographer} |`,
+          artContext2: artList[shareTime % 30].other,
         },
       });
     }

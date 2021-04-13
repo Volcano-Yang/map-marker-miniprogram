@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/map/map",
+    "pages/index/index",
     "pages/allList/allList",
     "pages/info/info",
     "pages/add/add",

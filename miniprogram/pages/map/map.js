@@ -26,6 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.goToIntro()
     let showAdmin = config.show_admin ? true : false;
     if (app.globalData.showAdmin) {
       showAdmin = true;
@@ -49,6 +50,23 @@ Page({
 
   onShow: function () {
     this.getMarkerData();
+  },
+
+  goToIntro: function () {
+    try {
+      const res = wx.getStorageSync('isNotShowIntroduction');
+      console.log("isNotShowIntroduction缓存内容", res);
+      if (res) {
+        console.log("不需要展示引导");
+      } else {
+        console.log("需要展示引导");
+        wx.navigateTo({
+          url: "../index/index",
+        });
+      }
+    } catch (e) {
+      console.log("缓存不支持", e);
+    }
   },
 
   getMarkerData: function () {
@@ -89,6 +107,11 @@ Page({
         item.width = 20;
         item.height = 25;
         item.title = item.problemLabel;
+        // item.customCallout = {
+        //   anchorX: 0,
+        //   anchorY: -20,
+        //   display: "BYCLICK"
+        // }
       });
       this.setData({
           stores: data,
