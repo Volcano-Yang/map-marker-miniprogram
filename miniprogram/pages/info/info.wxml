@@ -8,9 +8,18 @@
   </swiper>
 </block>
 <view class="content">
-  <view class="problem">问题：{{store.problemLabel}}</view>
-  <view class="address">地址：{{store.address}}</view>
-  <view class="location">位置定位：longitude {{store.longitude}} latitude {{store.latitude}}</view>
+  <view class="problem">{{store.problemLabel}}</view>
+  <view class="user">
+    <!-- <van-icon name="contact" class="text-blue margin-right-df" /> -->
+    <text class="cuIcon-people text-blue margin-right-df" ></text>
+    上传者：
+    <text style="font-size:40rpx;">{{store.userName || "系统管理员"}}</text>
+  </view>
+  <view class="address">
+    <!-- <van-icon name="location-o" class="text-blue margin-right-df" /> -->
+    <text class="cuIcon-location text-blue margin-right-df"></text>
+    {{store.address}}
+  </view>
 </view>
 <block wx:if="{{is_administrator}}">
   <button class='button copy_path' bindtap='copyPath'>复制路径</button>

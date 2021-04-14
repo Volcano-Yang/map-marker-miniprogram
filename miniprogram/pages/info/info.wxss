@@ -1,28 +1,54 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+page {
+  width: 750rpx;
+  background-color: #fff;
+}
+
 .slide-image {
   width: 750rpx;
 }
 
 swiper {
-  height: 240px;
+  height: 424rpx;
   background-color: #eee;
 }
 
 .content {
-  padding: 20rpx;
-}
 
-.address {
-  margin-bottom: 20rpx;
-}
-
-.location {
-  margin-bottom: 20rpx;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .problem {
-  font-size: 50rpx;
-  margin-bottom: 20rpx;
+  font-size: 60rpx;
+  font-weight: 350;
+  margin-top: 80rpx;
+  margin-bottom: 70rpx;
+  color: #0077e5;
 }
+
+.user {
+  width: 700rpx;
+  margin-bottom: 30rpx;
+  /* font-weight: 200; */
+  text-align: center;
+}
+
+.address {
+  width: 600rpx;
+  margin-bottom: 40rpx;
+  /* font-weight: 200; */
+  text-align: center;
+}
+
+
+
+
 
 .copy_path {
   position: absolute;
@@ -55,5 +81,8 @@ swiper {
   width: 80%;
   height: 80rpx;
   color: #fff;
-  background-color: #00a962;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: 200;
+  background-color: #007ce6;
 }
