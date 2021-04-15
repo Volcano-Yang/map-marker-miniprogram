@@ -8,11 +8,74 @@
   background-color: #454545;
 }
 
+.map {
+  width: 100vw;
+  height: 100vh;
+}
 
 /* page {
   background-color: #454545;
 } */
+.top-image {
+  width: 100vw;
+  height: 100vh;
+}
 
-.introduction-image {
+.tips-image {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tips {
+  position: absolute;
   width: 750rpx;
+  height: 926rpx;
+  bottom: 200rpx;
+}
+
+.nav {
+  position: absolute;
+  width: 750rpx;
+  height: 140rpx;
+  bottom: 20rpx;
+}
+
+
+
+/* 问题列表 */
+.numberList {
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 3px 3px 2px #bbbcbc;
+}
+
+.numberList-item {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px 10px 4px;
+}
+
+.numberList-item-line {
+  height: 1px;
+  width: 80%;
+  margin: 0px auto;
+  background-color: #ededed;
+}
+
+.numberList-item-image {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.numberList-item-text {
+  font-size: 14px;
 }

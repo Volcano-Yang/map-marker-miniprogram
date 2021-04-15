@@ -19,7 +19,7 @@ map {
   position: absolute;
   width: 300px;
   left: calc(50% - 150px);
-  bottom: 20rpx;
+  bottom: 40rpx;
   background-color: rgb(255, 255, 255);
   border-radius: 50rpx;
   box-shadow: 3px 3px 2px #bbbcbc;
@@ -39,6 +39,23 @@ map {
   margin-bottom: 3px;
 }
 
+.postion-add {
+  position: absolute;
+  left: calc(50% - 35px);
+  bottom: 15px;
+  width: 70px;
+  height: 70px;
+  font-size: 25rpx;
+  color: #fff;
+  background-color: #0079e7;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* .nav-tabbar-left{
   position: absolute;
@@ -50,7 +67,6 @@ map {
   position: absolute;
   left: calc(50% - 30px);
   bottom: 0px;
-
 }
 
 .nav-tabbar-right{
@@ -67,7 +83,6 @@ map {
   /* color: #7795f8; */
   background-color: rgb(255, 255, 255);
   /* line-height: 100rpx; */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,10 +94,9 @@ map {
   height: 60px;
   font-size: 25rpx;
   color: #fff;
-  background-color: #0079e7;
+  background-color: #fff;
   border-radius: 50%;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,8 +182,8 @@ map {
   font-size: 20rpx;
   margin-top: 6rpx;
   text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .trangle {

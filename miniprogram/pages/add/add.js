@@ -206,15 +206,15 @@ Page({
     let iconPath = "";
     switch (problemLabel) {
       case "盲道占用":
-        iconPath = "/images/marker/occupy.png";
+        iconPath = "../../images/marker/occupy.png";
         break;
 
       case "盲道设计":
-        iconPath = "/images/marker/design.png";
+        iconPath = "../../images/marker/design.png";
         break;
 
       default:
-        iconPath = "/images/marker/error.png";
+        iconPath = "../../images/marker/error.png";
         break;
     }
     this.setData({
