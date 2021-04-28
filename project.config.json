@@ -45,6 +45,7 @@
   "appid": "wx9e77ae37861c73ec",
   "projectname": "meishitujian",
   "libVersion": "2.15.0",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

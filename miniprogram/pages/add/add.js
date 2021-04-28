@@ -115,6 +115,7 @@ Page({
             iconPath: this.data.iconPath,
             images: this.data.images,
             content: event.detail.value.content,
+            userName: wx.getStorageSync('nickName')
           },
         })
         .then((res) => {
@@ -142,7 +143,9 @@ Page({
       sourceType: ['album', 'camera'],
       success: res => {
 
-        wx.showLoading({ title: '上传中' })
+        wx.showLoading({
+          title: '上传中'
+        })
         let tempFilePaths = res.tempFilePaths
         let items = [];
         for (const tempFilePath of tempFilePaths) {
@@ -162,14 +165,22 @@ Page({
             images: urls
           }, res => {
             wx.hideLoading();
-            wx.showToast({ title: '上传图片成功', icon: 'success' })
+            wx.showToast({
+              title: '上传图片成功',
+              icon: 'success'
+            })
           })
         }).catch(() => {
           wx.hideLoading()
-          wx.showToast({ title: '上传图片错误', icon: 'error' })
+          wx.showToast({
+            title: '上传图片错误',
+            icon: 'error'
+          })
         })
 
-        this.setData({ tempPhoto: items })
+        this.setData({
+          tempPhoto: items
+        })
       }
     })
   },

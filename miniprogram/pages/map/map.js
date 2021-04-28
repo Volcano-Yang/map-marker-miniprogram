@@ -74,53 +74,67 @@ Page({
       title: "数据加载中...",
     });
 
-    store.get().then((res) => {
-      let data = res.data;
-      /**
-       * 处理 occurpyProblemNumber,errorProblemNumber,designProblemNumber
-       */
-      let occurpyProblemNumber = 0;
-      let errorProblemNumber = 0;
-      let designProblemNumber = 0;
-      res.data.forEach((item) => {
-        if (item.problemLabel === "盲道破损") {
-          errorProblemNumber++;
-        } else if (item.problemLabel === "盲道占用") {
-          occurpyProblemNumber++;
-        } else if (item.problemLabel === "盲道设计") {
-          designProblemNumber++;
+    wx.cloud
+      .callFunction({
+        name: "getStore",
+      })
+      .then((res) => {
+        console.log("云函数获取store", res.result)
+        if (res.result.errMsg = "collection.get:ok") {
+          let data = res.result.data;
+          /**
+           * 处理 occurpyProblemNumber,errorProblemNumber,designProblemNumber
+           */
+          let occurpyProblemNumber = 0;
+          let errorProblemNumber = 0;
+          let designProblemNumber = 0;
+          res.result.data.forEach((item) => {
+            if (item.problemLabel === "盲道破损") {
+              errorProblemNumber++;
+            } else if (item.problemLabel === "盲道占用") {
+              occurpyProblemNumber++;
+            } else if (item.problemLabel === "盲道设计") {
+              designProblemNumber++;
+            }
+          });
+
+          this.setData({
+            occurpyProblemNumber,
+            errorProblemNumber,
+            designProblemNumber,
+          });
+
+          /***
+           * 处理marker
+           * 将 _id 给 id ,确保 marker 事件的正确触发
+           */
+          data.map((item, index) => {
+            item.id = index;
+            item.width = 20;
+            item.height = 25;
+            item.title = item.problemLabel;
+            // item.customCallout = {
+            //   anchorX: 0,
+            //   anchorY: -20,
+            //   display: "BYCLICK"
+            // }
+          });
+          this.setData({
+              stores: data,
+            },
+            () => {
+              wx.hideLoading();
+            }
+          );
+        } else {
+          () => {
+            wx.showToast({
+              title: '获取数据失败',
+            })
+            wx.hideLoading();
+          }
         }
       });
-
-      this.setData({
-        occurpyProblemNumber,
-        errorProblemNumber,
-        designProblemNumber,
-      });
-
-      /***
-       * 处理marker
-       * 将 _id 给 id ,确保 marker 事件的正确触发
-       */
-      data.map((item, index) => {
-        item.id = index;
-        item.width = 20;
-        item.height = 25;
-        item.title = item.problemLabel;
-        // item.customCallout = {
-        //   anchorX: 0,
-        //   anchorY: -20,
-        //   display: "BYCLICK"
-        // }
-      });
-      this.setData({
-          stores: data,
-        },
-        () => {
-          wx.hideLoading();
-        }
-      );
-    });
   },
 
   getUserInfo: function (e) {
@@ -250,10 +264,28 @@ Page({
     });
   },
 
-  addMarker: function () {
-    wx.navigateTo({
-      url: "../add/add",
-    });
+  addMarker: async function () {
+    const nickName = wx.getStorageSync('nickName')
+    if (!nickName) {
+      wx.getUserProfile({
+        desc: '用于记录上传者信息',
+        success: (res) => {
+          this.setData({
+            nickName: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl,
+          })
+          wx.setStorageSync("avatarUrl", res.userInfo.avatarUrl);
+          wx.setStorageSync("nickName", res.userInfo.nickName);
+          wx.navigateTo({
+            url: "../add/add",
+          });
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: "../add/add",
+      });
+    }
   },
 
   goArticle: function () {

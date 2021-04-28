@@ -42,6 +42,13 @@ Component({
         title: "生成中",
       });
       if (this.data.drawData.context1 === "已经第") {
+        let numberId = "";
+        if (this.data.drawData.numberId <= 10) {
+          numberId = " " + this.data.drawData.numberId
+        } else {
+          numberId = "" + this.data.drawData.numberId
+        }
+        console.log("numberId", numberId)
         // 下次这个画布宽度最好就按iphone6的750rpx定
         this.setData({
           imgDraw: {
@@ -105,7 +112,7 @@ Component({
               },
               {
                 type: "text",
-                text: "" + this.data.drawData.numberId,
+                text: numberId,
                 css: {
                   top: "500rpx",
                   left: "440rpx",
@@ -143,7 +150,7 @@ Component({
               // 二维码
               {
                 type: "image",
-                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
+                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qr-code2.jpg?sign=e9272e95a564b5b62bd327f02c7be7a1&t=1618475799",
                 css: {
                   bottom: "80rpx",
                   left: "180rpx",
@@ -195,6 +202,13 @@ Component({
           },
         });
       } else {
+        // let numberId = "";
+        // if (this.data.drawData.numberId <= 10) {
+        //   numberId = " " + this.data.drawData.numberId
+        // } else {
+        //   numberId = "" + this.data.drawData.numberId
+        // }
+        // console.log("numberId", numberId)
         this.setData({
           imgDraw: {
             width: "1210rpx",
@@ -295,7 +309,7 @@ Component({
               // 二维码
               {
                 type: "image",
-                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qrcode.jpg?sign=198fafc5be17490aad24413bab88ef70&t=1617611739",
+                url: "https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/share/qr-code2.jpg?sign=e9272e95a564b5b62bd327f02c7be7a1&t=1618475799",
                 css: {
                   bottom: "80rpx",
                   left: "180rpx",

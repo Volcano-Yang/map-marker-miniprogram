@@ -1,20 +1,4 @@
 <!-- 新手引导弹出层 -->
-<!-- <van-popup closeable close-icon="close" show="{{ isShowIntroduction }}" bind:close="onCloseIntroduction">
-    <image class="introduction-image" mode="widthFix" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/introduction/introduction.jpg?sign=0d8be4112215554ac6b51f648c7eecb3&t=1616247894"></image>
-</van-popup> -->
-<!-- <view class="page">
-    <image class="introduction-image" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/introduction/introduction.jpg?sign=1f8a2d647cacd20c63cea2d4977b5f8d&t=1616225044" mode="widthFix" bindtap="onCloseIntroduction"></image>
-</view> -->
-
-<!-- <view class="page">
-    <view class="top-image">
-        <view class="tips-image">
-            <image src="../../images/intro/tips3.png" class="tips" mode="widthFix" bindtap="onCloseIntroduction"></image>
-            <image src="../../images/intro/nav.png" class="nav" mode="widthFix" bindtap="onCloseIntroduction"></image>
-        </view>
-    </view>
-</view> -->
-
 <map id="map" class="map" enable-building="true" enable-3D="true">
     <!-- 问题数量表 -->
     <cover-view class="numberList">
@@ -43,10 +27,13 @@
         </cover-view>
     </cover-view>
 
+    <!-- 定位 -->
+    <cover-view class="getLocation">
+        <cover-image src="../../images/home/getLocation.png"></cover-image>
+    </cover-view>
+
     <cover-view class="tips-image" bindtap="onCloseIntroduction">
         <cover-image src="../../images/intro/tips3.png" class="tips" mode="widthFix"></cover-image>
         <cover-image src="../../images/intro/nav2.png" class="nav" mode="widthFix"></cover-image>
-        <!-- <image src="../../images/intro/tips3.png" class="tips" mode="widthFix"></image>
-        <image src="../../images/intro/nav2.png" class="nav" mode="widthFix"></image> -->
     </cover-view>
 </map>
