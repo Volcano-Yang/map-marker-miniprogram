@@ -1,4 +1,7 @@
 # 地图标记小程序模板
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 地图标记小程序（map-markers-miniprogram）是一个借助腾讯地图map api给用户展示周边资源和允许用户自主上传添加标记的小程序模板。可以用它改造成新生校园导航、美食周边、AED地图、好房资源地图等地图小程序。希望我的代码对你有所帮助~
 
@@ -72,3 +75,23 @@
 ## LICENSE
 
 本项目基于 Apache License 2.0 开放源代码授权 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://volcanoblog.cn"><img src="https://avatars.githubusercontent.com/u/43328103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>杨灿就是杨火山</b></sub></a><br /><a href="#infra-Volcano-Yang" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#design-Volcano-Yang" title="Design">🎨</a> <a href="https://github.com/Volcano-Yang/map-marker-miniprogram/commits?author=Volcano-Yang" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
